@@ -15,7 +15,7 @@
     <script defer src="/__/firebase/7.13.1/firebase-firestore.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"> </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"> </script> -->
 
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -95,48 +95,7 @@
     <div class="mdc-dialog__scrim"></div>
 </div>
 <script src="app.js"></script>
-<script>
-    document.querySelector('#turnAudioOnBtn').addEventListener('click',turnAudioOn);
-    document.querySelector('#startBtn').addEventListener('click',play);
-    document.querySelector('#stopBtn').addEventListener('click',stop);
-    const myBpm = 120;
-    const player = new Tone.Player("cowbell.wav").toDestination();
-    const loopA = new Tone.Loop(time => {player.start(time)}, '4n');
-    var output = document.getElementById("demo");
-    output.innerHTML = myBpm;
-    //turnAudioOn();
-    Tone.Transport.bpm.value = myBpm;
-
-async function turnAudioOn () {
-  await Tone.start();
-  console.clear();
-  console.log('AudioOn!');
-
-}
-function play () {
-  console.clear();
-  Tone.Transport.stop();
-  //Tone.Transport.clear();
-  loopA.stop();
-  // Tone.Transport.bpm.value = myBpm;
-  loopA.start();
-  Tone.Transport.start();
-  console.log('Start!')
-
-}
-
-function stop () {
-  console.clear();
-  Tone.Transport.stop();
-  Tone.Transport.clear();
-  console.log('stop!');
-}
-function myRamp (val) {
-  Tone.Transport.bpm.rampTo(val, 1);
-  // console.log(val);
-  output.innerHTML = val;
-}
-</script>
+<script type="module" src="metronomo.js"></script>
 <style>
 
 </style>
