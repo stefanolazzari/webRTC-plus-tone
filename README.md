@@ -6,3 +6,10 @@ to use Firebase Cloud Firestore for signalling in a WebRTC video chat applicatio
 The solution to this codelab can be seen in the _solution_ branch.
 
 See http://webrtc.org for details.
+
+
+TODO
+1. latency test
+2. audio/video resolution
+3. tuner
+4. authentication

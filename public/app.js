@@ -24,9 +24,6 @@ function init() {
   document.querySelector('#hangupBtn').addEventListener('click', hangUp);
   document.querySelector('#createBtn').addEventListener('click', createRoom);
   document.querySelector('#joinBtn').addEventListener('click', joinRoom);
-  // document.querySelector('#turnAudioOnBtn').addEventListener('click',turnAudioOn);
-  // document.querySelector('#startBtn').addEventListener('click',play);
-  // document.querySelector('#stopBtn').addEventListener('click',stop);
 
   roomDialog = new mdc.dialog.MDCDialog(document.querySelector('#room-dialog'));
 }

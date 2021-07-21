@@ -15,46 +15,50 @@
     <script defer src="/__/firebase/7.13.1/firebase-firestore.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"> </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"> </script>
 
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <h3>Basic video chat with metronome</h3>
 <div id="buttons">
-    <button class="mdc-button mdc-button--raised" id="cameraBtn">
+    <button class="mdc-button mdc-button--raised custom-text-button" id="cameraBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
         <span class="mdc-button__label">Open camera & microphone</span>
     </button>
-    <button class="mdc-button mdc-button--raised" disabled id="createBtn">
+    <button class="mdc-button mdc-button--raised custom-text-button" disabled id="createBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
         <span class="mdc-button__label">Create room</span>
     </button>
-    <button class="mdc-button mdc-button--raised" disabled id="joinBtn">
+    <button class="mdc-button mdc-button--raised custom-text-button" disabled id="joinBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
         <span class="mdc-button__label">Join room</span>
     </button>
-    <button class="mdc-button mdc-button--raised" disabled id="hangupBtn">
+    <button class="mdc-button mdc-button--raised custom-text-button" disabled id="hangupBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">close</i>
         <span class="mdc-button__label">Hangup</span>
     </button>
         <div>
-            <button class="mdc-button mdc-button--raised" class="button" id="turnAudioOnBtn">
-                <span>Turn Audio On</span>
-            </button>
-            <button class="mdc-button mdc-button--raised" id="startBtn">
+            <div>   
+                <button class="mdc-button mdc-button--raised custom-text-button" id="turnAudioOnBtn2" >
+                    <i class="material-icons mdc-icon-button__icon">volume_off</i>
+                </button>       
+                <input class="slider" type="range" min="-70" max="0" value="-70" id="mtnValue" oninput="mtnVolume(this.value)">
+                <span>Volume: </span> 
+                <span id="mtnVolumeText"></span>
+            </div>
+            <button class="mdc-button mdc-button--raised custom-text-button" id="startBtn">
                 <i class="mdi mdi-metronome" aria-hidden="true"></i>
                 <span class="mdc-button__label">Start</span>
             </button>
-            <button class="mdc-button mdc-button--raised" id="stopBtn">
+            <button class="mdc-button mdc-button--raised custom-text-button" id="stopBtn">
                 <span class="mdc-button__label">Stop</span>
             </button>
-
         </div>
         <div>          
             <input class="slider" type="range" min="30" max="320" value="120" id="bpmSlider" oninput="myRamp(this.value)">
             <span>Bpm: </span> 
-            <span id="demo"></span>
+            <span id="bpmText"></span>
         </div>
 </div>
 <div>
@@ -95,7 +99,7 @@
     <div class="mdc-dialog__scrim"></div>
 </div>
 <script src="app.js"></script>
-<script type="module" src="metronomo.js"></script>
+<script src="metronomo.js"></script>
 <style>
 
 </style>
